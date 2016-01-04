@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="sensecube"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <thing-type id="SenseCube">
+        <label>SenseCube Binding Thing</label>
+        <description>Gerät mit Sensoren zur Erfassung von Temperatur, Geräuschpegel und Beleuchtungsstärke.</description>
+
+        <channels>
+            <channel id="temperature" typeId="temperature-channel"/>
+            <channel id="sound" typeId="sound-channel"/>
+            <channel id="light" typeId="light-channel"/>
+        </channels>
+    </thing-type>
+
+    <channel-type id="temperature-channel">
+        <item-type>Number</item-type>
+        <label>Temperatur</label>
+        <description>Temperature channel for sensecube Binding</description>
+        <category>Temperature</category>
+        <state pattern="%.1f °C" readOnly="true" />
+    </channel-type>
+    <channel-type id="sound-channel">
+        <item-type>Number</item-type>
+        <label>Geräuschpegel</label>
+        <description>Sound channel for sensecube Binding</description>
+        <category>SoundVolume</category>
+        <state pattern="%.1f" readOnly="true" />
+    </channel-type>
+    <channel-type id="light-channel">
+        <item-type>Number</item-type>
+        <label>Beleuchtungsstärke</label>
+        <description>Light channel for sensecube Binding</description>
+        <category>Light</category>
+        <state pattern="%.1f" readOnly="true" />
+    </channel-type>
+
+</thing:thing-descriptions>
